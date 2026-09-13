@@ -1,10 +1,10 @@
-# AI-Powered Pothole Detection & Reporting System
+# Pothole Detection & Reporting System
 
 **Developed by: Sarvagya Gupta**
 
-An enterprise-grade, full-stack application designed to crowdsource road hazard reporting. The system uses an advanced YOLO computer vision model to automatically verify images of potholes, determine their severity, and route actionable reports (complete with GPS coordinates and visual bounding boxes) to the appropriate civic authorities.
+A full-stack application designed to crowdsource road hazard reporting. The system uses an advanced YOLO computer vision model to automatically verify images of potholes, determine their severity, and route actionable reports (complete with GPS coordinates and visual bounding boxes) to the appropriate civic authorities.
 
-## 🚀 Approach & Architecture
+##  Approach & Architecture
 
 This project is built using a modern **Monorepo / Microservice Architecture**:
 
@@ -13,7 +13,7 @@ This project is built using a modern **Monorepo / Microservice Architecture**:
 3. **ML Microservice (Python FastAPI):** A dedicated, lightning-fast Python API that receives images, runs a YOLOv8 object detection model, and returns the pothole bounding box coordinates, confidence score, and calculated severity.
 4. **Email Routing (Nodemailer):** Automated civic alerts are sent to the target authority via Gmail SMTP, embedding the analyzed image and a direct Google Maps link.
 
-## 🛠️ Libraries & Technologies Used
+## Libraries & Technologies Used
 
 ### Web & Backend (Node.js)
 * **Framework:** Next.js 15+ (App Router), React 19
@@ -30,7 +30,7 @@ This project is built using a modern **Monorepo / Microservice Architecture**:
 
 ---
 
-## 💻 How to Run the Project Locally
+## How to Run the Project Locally
 
 ### 1. Prerequisites
 * **Node.js** (v20+)
@@ -88,4 +88,3 @@ python main.py
 *The ML API will start on `http://127.0.0.1:8000`. The first time it runs, it will automatically download the YOLO weights from HuggingFace.*
 
 ---
-*Built with ❤️ to make our streets safer.*
