@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(220 33% 98%);
+  --color-foreground: hsl(222.2 47.4% 11.2%);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    /* Rich, subtle gradient background */
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(210, 100%, 95%, 1) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(250, 100%, 97%, 1) 0, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(190, 100%, 95%, 1) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: rgb(255 255 255 / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 0.4);
+    box-shadow: 0 8px 30px rgb(0 0 0 / 0.04);
+  }
+  
+  .glass-card {
+    background-color: rgb(255 255 255 / 0.8);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgb(255 255 255 / 0.6);
+    box-shadow: 0 8px 30px rgb(0 0 0 / 0.08);
+  }
+}
