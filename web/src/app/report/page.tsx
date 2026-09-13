@@ -23,7 +23,19 @@ const Map = dynamic(() => import('@/components/Map'), {
 
 interface MLResult {
   pothole_count: number;
-  detections: { severity: string; confidence: number }[];
+  image_size: { width: number; height: number };
+  detections: { 
+    severity: string; 
+    confidence: number;
+    bounding_box: {
+      x1: number;
+      y1: number;
+      x2: number;
+      y2: number;
+      width: number;
+      height: number;
+    }
+  }[];
 }
 
 interface SubmissionResult {
