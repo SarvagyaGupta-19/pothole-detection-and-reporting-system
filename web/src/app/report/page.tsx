@@ -220,7 +220,8 @@ export default function Home() {
 
       const formData = new FormData();
       formData.append("file", file);
-      const response = await fetch("http://127.0.0.1:8000/detect", {
+      const mlApiUrl = process.env.NEXT_PUBLIC_ML_API_URL || "http://127.0.0.1:8000";
+      const response = await fetch(`${mlApiUrl}/detect`, {
         method: "POST",
         body: formData,
       });
