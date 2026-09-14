@@ -1,5 +1,12 @@
+import os
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+import torch
+torch.set_num_threads(1)
+
 from huggingface_hub import hf_hub_download
 from ultralytics import YOLO
 from PIL import Image
