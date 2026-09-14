@@ -65,7 +65,7 @@ def health_check():
     }
 
 @app.post("/detect")
-async def detect_potholes(file: UploadFile = File(...)):
+def detect_potholes(file: UploadFile = File(...)):
     """
     Upload an image, run pothole detection, and return JSON results.
     """
@@ -73,8 +73,8 @@ async def detect_potholes(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail="File provided is not an image.")
 
     try:
-        # Read the uploaded image in memory
-        contents = await file.read()
+        # Read the uploaded image in memory synchronously
+        contents = file.file.read()
         image = Image.open(io.BytesIO(contents))
         
         # Calculate total image area
