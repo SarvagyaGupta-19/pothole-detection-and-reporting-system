@@ -18,8 +18,8 @@ app = FastAPI(title="Pothole Reporting System API", version="1.0.0", lifespan=li
 # Allow Next.js frontend to talk to this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, change to the actual frontend URL
-    allow_credentials=True,
+    allow_origins=["*"],  # Allows any frontend (Vercel, localhost)
+    allow_credentials=False, # Must be False if origins is "*"
     allow_methods=["*"],
     allow_headers=["*"],
 )
